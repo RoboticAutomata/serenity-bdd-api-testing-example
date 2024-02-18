@@ -1,3 +1,9 @@
+*.bak
+.classpath
+.project
+.settings/
+README.md.*
+
 target/
 build
 .gradle
