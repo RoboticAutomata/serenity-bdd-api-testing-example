@@ -41,7 +41,7 @@ public class UserSteps {
 		requestBody.addProperty("lastName", user.name().lastName());
 		requestBody.addProperty("email", email);
 		requestBody.addProperty("password", password);
-		
+
 		userAPI.addUser(requestBody);
 
 		restAssuredThat(response -> response.statusCode(201));
@@ -49,25 +49,21 @@ public class UserSteps {
 
 	@When("I login")
 	public void i_login() {
-		
-		String email = 
-				Serenity.getCurrentSession().get("email").toString();
-		
-		String password = 
-				Serenity.getCurrentSession().get("password").toString();
+
+		String email = Serenity.getCurrentSession().get("email").toString();
+
+		String password = Serenity.getCurrentSession().get("password").toString();
 
 		JsonObject requestBody = new JsonObject();
 		requestBody.addProperty("email", email);
 		requestBody.addProperty("password", password);
-		
+
 		userAPI.login(requestBody);
 
 		restAssuredThat(response -> response.statusCode(200));
-		
-		
-		String token = 
-				SerenityRest.lastResponse().getBody().jsonPath().get("token");
-		
+
+		String token = SerenityRest.lastResponse().getBody().jsonPath().get("token");
+
 		Serenity.setSessionVariable("token").to(token);
 	}
 
