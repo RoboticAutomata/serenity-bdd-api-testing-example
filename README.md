@@ -104,4 +104,5 @@ mvn clean verify
 
 ## Resources
 
-Hopefully, we'll be adding a Youtube demo and Blog tutorial soon.
+- [Youtube Tutorial](https://youtu.be/Us1b191D6pQ?feature=shared)
+- [Medium Blog Tutorial](https://medium.com/@RoboticAutomata/api-test-automation-tutorial-with-serenity-bdd-e40f2c34876f)
